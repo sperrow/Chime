@@ -3,6 +3,8 @@
 // May require a larger container for other details like logo, nav links, etc.
 
 // Main content class that holds everything on the page
+var React = require('react');
+
 var MainContent = React.createClass({
   componentWillMount: function() {
     this.setState({page: 'login'});
@@ -29,10 +31,10 @@ var MainContent = React.createClass({
 
 // The signup button, which should switch the view to show the signup form
 var SignupButton = React.createClass({
-  handleSubmit: function() {
-    this.props.onButtonSubmit();
+  handleSubmit: function(e) {
+    e.preventDefault();
 
-    return false;
+    this.props.onButtonSubmit();
   },
   render: function() {
     return (
@@ -56,9 +58,9 @@ var SignupForm = React.createClass({
 
 // Login form class, which contains the input fields and submits those details to the server.
 var LoginForm = React.createClass({
-  handleSubmit: function() {
+  handleSubmit: function(e) {
     // TODO: submit to server
-    return false;
+    e.preventDefault();
   },
   render: function() {
     return (
