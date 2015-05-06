@@ -77,7 +77,7 @@ var MemberList = React.createClass({
 // This is the Member class that renders an individual member and its info
 var Member = React.createClass({
   handleClick: function(e) {
-    console.log(this);
+    console.log(this.props.data.first_name, this.props.data.last_name);
   },
   render: function() {
     return (
